@@ -68,7 +68,7 @@ const isRegisterButtonLoading = ref(false);
 const handleSubmit = async () => {
   try {
     isRegisterButtonLoading.value = true
-    const register = await $fetch("http://localhost:3000/auth/register", {
+    const register = await $fetch("http://103.174.114.151:3000/auth/register", {
       method: "POST",
       body: {
         email: email.value,

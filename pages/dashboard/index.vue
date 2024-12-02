@@ -36,7 +36,7 @@ function formatRupiah(amount) {
 const fetchTransactions = async () => {
   try {
     transactions.value = await $fetch(
-      `http://localhost:3000/transactions/user/${userData.value.id}`,
+      `http://103.174.114.151:3000/transactions/user/${userData.value.id}`,
       {
         method: "GET",
         headers: {
@@ -72,7 +72,7 @@ const handleCreateTranscation = async () => {
   };
 
   try {
-    const newTransaction = await $fetch("http://localhost:3000/transactions", {
+    const newTransaction = await $fetch("http://103.174.114.151:3000/transactions", {
       method: "POST",
       body: newTransactionObject,
       credentials: "include",
@@ -99,7 +99,7 @@ const handleCreateTranscation = async () => {
 const handleDeleteTransaction = async () => {
   try {
     await $fetch(
-      `http://localhost:3000/transactions/${selectedTransactionToDelete.value.id}`,
+      `http://103.174.114.151:3000/transactions/${selectedTransactionToDelete.value.id}`,
       {
         method: "DELETE",
         credentials: "include",
@@ -133,7 +133,7 @@ const handleEditTransaction = async () => {
 
   try {
     const editedTransaction = await $fetch(
-      `http://localhost:3000/transactions/${selectedTransactionToEdit.value.id}`,
+      `http://103.174.114.151:3000/transactions/${selectedTransactionToEdit.value.id}`,
       {
         method: "PUT",
         body: editedTransactionObject,

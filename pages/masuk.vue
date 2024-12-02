@@ -68,7 +68,7 @@ const userDataCookie = useCookie("user", {
 const handleSubmit = async () => {
   try {
     isLoginButtonLoading.value = true;
-    const login = await $fetch("http://localhost:3000/auth/login", {
+    const login = await $fetch("http://103.174.114.151:3000/auth/login", {
       method: "POST",
       body: { email: email.value, password: password.value },
     });
